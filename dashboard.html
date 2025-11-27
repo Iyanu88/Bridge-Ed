@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BridgeEd Dashboard</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-blue-50 p-6">
+
+  <div class="bg-white p-6 rounded-2xl shadow-md">
+    <h1 class="text-3xl font-bold text-green-600">
+      Welcome, <span id="username"></span> 👋
+    </h1>
+
+    <p class="mt-2 text-gray-600">You are now logged into BridgeEd.</p>
+
+    <button id="logoutBtn"
+      class="mt-6 px-6 py-3 rounded-xl bg-red-500 text-white hover:bg-red-600">
+      Log Out
+    </button>
+  </div>
+
+  <script>
+    const user = JSON.parse(localStorage.getItem("bridgeed-user"));
+    if (!user) window.location.href = "login.html";
+
+    document.getElementById("username").textContent = user.name;
+
+    document.getElementById("logoutBtn").onclick = () => {
+      localStorage.removeItem("bridgeed-user");
+      window.location.href = "login.html";
+    };
+  </script>
+
+</body>
+</html>

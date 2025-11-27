@@ -1,0 +1,40 @@
+.input {
+  @apply w-full p-3 border rounded-xl bg-gray-50 mt-1;
+}
+
+.btn-blue {
+  @apply bg-blue-600 text-white py-3 rounded-xl font-semibold hover:bg-blue-700;
+}
+
+.btn-green {
+  @apply bg-green-600 text-white py-3 rounded-xl font-semibold hover:bg-green-700;
+}
+
+.fade-in {
+  animation: fade 1s ease-in-out forwards;
+}
+
+.fade-in-delay {
+  animation: fade 1.5s ease-in-out forwards;
+  opacity: 0;
+}
+
+.fade-in-delay2 {
+  animation: fade 2s ease-in-out forwards;
+  opacity: 0;
+}
+
+.slide-up {
+  animation: slideUp 0.8s ease-out forwards;
+  opacity: 0;
+}
+
+@keyframes fade {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(40px); }
+  to { opacity: 1; transform: translateY(0); }
+}
